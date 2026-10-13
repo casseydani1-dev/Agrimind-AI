@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriMind AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🌱 AgriMind AI</h1>
+    <p>Your intelligent agricultural assistant</p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('chat')">AI Assistant</button>
+    <button onclick="showSection('plant')">Plant Analysis</button>
+    <button onclick="showSection('weather')">Weather</button>
+    <button onclick="showSection('calculator')">Farm Calculator</button>
+  </nav>
+
+  <main>
+    <section id="chat" class="panel">
+      <h2>Ask AgriMind AI</h2>
+      <p>Ask questions about crops, soil, pests, livestock, and farming.</p>
+      <div id="chatBox" class="chat-box"></div>
+      <textarea id="question" placeholder="Ask an agricultural question..."></textarea>
+      <input type="file" id="chatImage" accept="image/*">
+      <button onclick="askAI()">Ask AI</button>
+    </section>
+
+    <section id="plant" class="panel hidden">
+      <h2>Plant Image Analysis</h2>
+      <p>Upload a plant image to investigate possible diseases or deficiencies.</p>
+      <input type="file" id="plantImage" accept="image/*">
+      <button onclick="analyzePlant()">Analyze Plant</button>
+      <div id="plantResult"></div>
+    </section>
+
+    <section id="weather" class="panel hidden">
+      <h2>Farm Weather</h2>
+      <input id="location" placeholder="Enter a town or city">
+      <button onclick="getWeather()">Check Weather</button>
+      <div id="weatherResult"></div>
+    </section>
+
+    <section id="calculator" class="panel hidden">
+      <h2>Farm Profit Calculator</h2>
+      <label>Expected revenue (₦)</label>
+      <input type="number" id="revenue" placeholder="e.g. 500000">
+      <label>Total farming expenses (₦)</label>
+      <input type="number" id="expenses" placeholder="e.g. 200000">
+      <button onclick="calculateProfit()">Calculate Profit</button>
+      <div id="profitResult"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>AgriMind AI — Smarter farming through knowledge.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
